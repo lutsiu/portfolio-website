@@ -1,0 +1,29 @@
+@import "tailwindcss";
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+:root {
+  font-size: 62.5%; 
+}
+
+body {
+  font-family: 'Montserrat', sans-serif;
+}
+html, body {
+  @apply w-full min-w-0 overflow-x-hidden bg-black; 
+}
+
+@theme {
+  
+
+
+  /* Breakpoints */
+
+  --breakpoint-xs: 380px;     
+  --breakpoint-big-mobile: 440px;
+  --breakpoint-sm: 576px;     
+  --breakpoint-md: 768px;   
+  --breakpoint-lg: 1024px; 
+  --breakpoint-xl: 1280px; 
+  --breakpoint-2xl: 1440px;   
+  --breakpoint-3xl: 1536px;   
+}
