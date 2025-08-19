@@ -1,0 +1,51 @@
+"use client";
+
+import { ProjectPreviewDetailsType } from "@/app/types/ProjectPreviewDetailsType";
+import Image from "next/image";
+import Link from "next/link";
+import { useState } from "react";
+
+export default function ProjectPreviewCard({title, imageUrl, description, link, technologies}: ProjectPreviewDetailsType) {
+
+  const [cardIsHovered, setCardIsHovered] = useState(false);
+
+  return (
+    <Link className="
+           bg-zinc-900 rounded-[0.5rem] 
+           flex flex-col gap-[2rem] cursor-pointer
+           duration-300 hover:bg-zinc-800
+           pb-[2rem]
+           "
+      href={link} 
+      onMouseEnter={() => setCardIsHovered(true)}
+      onMouseLeave={() => setCardIsHovered(false)}
+    >
+      <div className={`${cardIsHovered ? "pt-0 px-0": "pt-[2rem] px-[2rem]"} duration-300  h-[20rem]`}>
+        <Image
+          src={imageUrl}
+          alt={title}
+          width={200}
+          height={170}
+          className="w-full h-full rounded-[0.5rem]"
+        />
+      </div>
+      <div className="flex flex-col gap-[1.5rem] px-[2rem]">
+        <h5 className="text-[2.4rem] text-gray-100">{title}</h5>
+        <p className="text-[1.2rem] text-zinc-300">{description}</p>
+        <div className="flex gap-[1rem]">
+          {technologies.map((t, i) => {
+            return (
+              <div
+                key={i}
+                className="bg-neutral-800 text-neutral-300 px-[1rem] py-[0.5rem] rounded-[0.5rem]"
+              >
+                {t}
+              </div>
+            )
+          })}
+        </div>
+        <p className="text-indigo-500 text-[1.5rem]">View details</p>
+      </div>
+    </Link>
+  )
+}

@@ -1,11 +1,11 @@
-import Image from "next/image";
+import HeroSection from "./sections/Home/Hero";
+import ProjectsSection from "./sections/Home/Projects";
 
 export default function Home() {
   return (
-    <div
-      className=""
-    >
-
-    </div>
+    <>
+      <HeroSection/>
+      <ProjectsSection/>
+    </>
   );
 }

@@ -9,7 +9,7 @@ body {
   font-family: 'Montserrat', sans-serif;
 }
 html, body {
-  @apply w-full min-w-0 overflow-x-hidden bg-black; 
+  @apply w-full min-w-0 overflow-x-hidden bg-black text-white; 
 }
 
 @theme {
