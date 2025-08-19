@@ -6,7 +6,7 @@ const projectPreviewDetailsData: ProjectPreviewDetailsType[] = [
     imageUrl: "/projects/intercode/intercode-hero.png",
     description: "Next.js project with nice UI for an outsource company.",
     link: "/projects/intercode",
-    technologies: ["Next.js", "Tailwind", "TypeScript"]
+    technologies: ["Next.js", "Tailwind", "TypeScript", "Zustand"]
   },
   {
     title: "Lutsiu.co",
