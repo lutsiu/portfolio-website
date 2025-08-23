@@ -2,7 +2,7 @@
 export default function Form() {
   return (
     <form className="flex flex-col gap-[2rem] flex-1"> 
-      <h5 className="font-bold text-[3rem] ">Send me a message</h5>
+      <h5 className="font-light text-[3rem] ">Send me a message</h5>
       <input 
         type="text" 
         name="name-input" 

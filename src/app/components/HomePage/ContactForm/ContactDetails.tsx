@@ -1,4 +1,3 @@
-import Title from "@/app/components/title";
 import ContactDetailsInfo from "./ContactDetailsInfo";
 
 export default function ContactDetails() {

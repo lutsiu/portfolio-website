@@ -18,9 +18,9 @@ export default function HeroSection() {
         </button>
       </div>
 
-      <div className="absolute top-[3rem] right-[15%] w-[50rem] h-[40rem] 
+      {/* <div className="absolute top-[3rem] right-[15%] w-[50rem] h-[40rem] 
                 bg-gradient-to-br from-purple-600 to-indigo-700 
-                rounded-full blur-3xl opacity-40" />
+                rounded-full blur-3xl opacity-40" /> */}
     </section>
   )
 }
