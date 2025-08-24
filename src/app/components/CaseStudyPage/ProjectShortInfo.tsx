@@ -15,10 +15,10 @@ export default function ProjectShortInfo(
     repoLink, designLink, technologies}: Props) {
 
   return (
-    <div>
+    <div className="mt-[4rem]">
       <h1 className="font-bold text-[8rem] leading-[110%]">{projectTitle}</h1>
       <h4 className="text-3xl text-neutral-300">{projectSubtitle}</h4>
-      <ul className="flex flex-row gap-[1rem] my-[2rem]">
+      <ul className="flex flex-row gap-[1rem] my-[3rem]">
         <li>
           <Link 
             href={`${liveLink}`}

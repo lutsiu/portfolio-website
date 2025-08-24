@@ -1,5 +1,4 @@
 import Link from "next/link";
-import SeeMore from "../SeeMoreLink/SeeMoreLink";
 
 export default function BottomPart() {
 

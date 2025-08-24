@@ -1,47 +1,62 @@
+"use client";
+
 import BottomPart from "@/app/components/CaseStudyPage/BottomPart";
 import ProjectExplanation from "@/app/components/CaseStudyPage/ProjectExplanation";
 import ProjectScreenshots from "@/app/components/CaseStudyPage/ProjectScreenshots";
 import ProjectShortInfo from "@/app/components/CaseStudyPage/ProjectShortInfo";
 import TopPart from "@/app/components/CaseStudyPage/TopPart";
+import projectsFullData from "@/app/data/ProjectsFullData";
+import { ProjectFullDataType } from "@/app/types/ProjectFullDataType";
+import { usePathname } from "next/navigation";
 
 export default function CaseStudyPage() {
+  const pathname = usePathname();
+  const projectName = pathname.split("/").at(2);
 
-  const DUMMY_ARRAY = [
-    "Mobile first", "Node.js",
-    "Typescript", "React",
-    "Spring Boot", "Express.js"
-  ];
+  const data = projectsFullData.find((pr) => pr.id === projectName) as ProjectFullDataType;
 
-  const lorem =
-    `
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit praesentium, 
-        libero fuga laudantium deserunt natus molestias
-         aliquid cupiditate laborum? Cupiditate saepe placeat quis 
-        officiis asperiores. Aperiam aliquam vero illum itaque.
-    `;
-  const DUMMY_IMAGES = Array(9).fill("/cat.png");
+  if (!data) {
+    return <div className="p-8 text-center text-red-500">Project not found.</div>;
+  }
+
+  const {
+    title,
+    subititle,
+    liveLink,
+    repoLink,
+    designLink,
+    technologies,
+    context,
+    solution,
+    impact,
+    myRole,
+    heroImage,
+    screenshots,
+  } = data;
 
   return (
     <>
-      <TopPart projectHeroImage={`${"/cat.png"}`} projectTitle={`${"Title"}`} />
+      <TopPart projectHeroImage={heroImage} projectTitle={title} />
+
       <ProjectShortInfo
-        projectTitle={`${"Title"}`}
-        projectSubtitle={`${"Project subtitle oiejrgjergerjngoeijrgroi jogij ergiojkno jerogij oinjergonerkogn oiergerg"}`}
-        liveLink={`${"/link"}`}
-        repoLink={`${"/link"}`}
-        designLink={`${"/link"}`}
-        technologies={DUMMY_ARRAY}
+        projectTitle={title}
+        projectSubtitle={subititle}
+        liveLink={liveLink}
+        repoLink={repoLink}
+        designLink={designLink}
+        technologies={technologies}
       />
 
-      <ProjectExplanation 
-        context={`${lorem}`} 
-        solution={`${lorem}`} 
-        impact={`${lorem}`}
-        myRole={`${lorem}`}
+      <ProjectExplanation
+        context={context}
+        solution={solution}
+        impact={impact}
+        myRole={myRole}
       />
-      <ProjectScreenshots screenshots={DUMMY_IMAGES}/>
 
-      <BottomPart/>
+      <ProjectScreenshots screenshots={screenshots} />
+
+      <BottomPart />
     </>
-  )
+  );
 }
