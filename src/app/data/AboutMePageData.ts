@@ -77,7 +77,7 @@ Outside the editor I’m a traveler and guitarist, which keeps my curiosity high
     "Ownership & initiative",
   ],
 
-  experienceCompany: ["Intercode — Full-stack Developer (6 months)"],
+  experienceCompany: "Intercode — Full-stack Developer (6 months)",
   experienceTechnologies: [
     "Next.js",
     "React",

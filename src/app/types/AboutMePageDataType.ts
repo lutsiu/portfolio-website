@@ -14,7 +14,7 @@ export type AboutMePageDataType = {
   productMindsetList: string[];
   qualityAndSpeedList: string[];
   communicationList: string[];
-  experienceCompany: string[];
+  experienceCompany: string;
   experienceTechnologies: string[];
   experienceTasksList: string[];
   languages: string[];
