@@ -1,4 +1,3 @@
-import Title from "../../components/title";
 
 interface Props {
   shortDescription: string;
@@ -7,9 +6,9 @@ interface Props {
 export default function AboutPageHeader({shortDescription}: Props) {
 
   return (
-    <header>
-      <Title title="About me"/>
-      <h6>{shortDescription}</h6>
+    <header className="mt-[5rem]">
+      <h1 className="text-[7rem] font-bold leading-[110%]">About me</h1>
+      <h6 className="text-[2rem] leading-[110%] text-neutral-300 font-medium">{shortDescription}</h6>
     </header>
   )
 }

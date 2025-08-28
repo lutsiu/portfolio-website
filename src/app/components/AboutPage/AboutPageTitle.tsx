@@ -6,6 +6,6 @@ interface Props {
 export default function AboutPageTitle({title}: Props) {
 
   return (
-    <h4>{title}</h4>
+    <h4 className="text-[3rem] font-bold">{title}</h4>
   )
 }
