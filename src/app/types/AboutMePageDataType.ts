@@ -15,7 +15,7 @@ export type AboutMePageDataType = {
   qualityAndSpeedList: string[];
   communicationList: string[];
   experienceCompany: string;
-  experienceTechnologies: string[];
+  experienceTechnologies: string;
   experienceTasksList: string[];
   languages: string[];
   focus: string[],

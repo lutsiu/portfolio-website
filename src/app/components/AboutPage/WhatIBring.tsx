@@ -1,3 +1,4 @@
+import AboutPageTitle from "./AboutPageTitle";
 import WhatIBringCard from "./WhatIBringCard";
 
 interface Props {
@@ -12,9 +13,9 @@ export default function WhatIBring({
   communicationList}: Props) {
 
   return (
-    <div>
-      <h4>What I bring</h4>
-      <div>
+    <div className="mt-[7rem]">
+      <AboutPageTitle title="What I bring"/>
+      <div className="flex justify-between gap-[3rem] mt-[3rem]">
         <WhatIBringCard 
           title="Product mindset"
           list={productMindsetList}  

@@ -28,13 +28,13 @@ export const technologiesPageTechnologies: AboutMePageTechnologyType[] = [
   {
     name: "Spring Boot",
     image: "/technologies/spring-boot.svg",
-    skill: 70,
+    skill: 80,
     color: "#6DB33F",
   },
   {
     name: "Java",
     image: "/technologies/java.svg",
-    skill: 72,
+    skill: 83,
     color: "#007396",
   },
   {
@@ -46,7 +46,7 @@ export const technologiesPageTechnologies: AboutMePageTechnologyType[] = [
   {
     name: "MongoDB",
     image: "/technologies/mongodb.svg",
-    skill: 60,
+    skill: 75,
     color: "#47A248",
   },
 ];
@@ -78,13 +78,13 @@ Outside the editor I’m a traveler and guitarist, which keeps my curiosity high
   ],
 
   experienceCompany: "Intercode — Full-stack Developer (6 months)",
-  experienceTechnologies: [
-    "Next.js",
-    "React",
-    "Node.js/Express",
-    "TypeScript",
-    "Tailwind",
-  ],
+  experienceTechnologies: `
+    Next.js,
+    React,
+    Node.js/Express,
+    TypeScript,
+    Tailwind,
+  `,
   experienceTasksList: [
     "Built and shipped a lead-generating marketing site with advanced SEO and i18n.",
     "Implemented a reusable UI system in Tailwind; carousels with Embla; popups and CTAs.",
@@ -93,22 +93,33 @@ Outside the editor I’m a traveler and guitarist, which keeps my curiosity high
   ],
 
   languages: [
-    "English — C1",
-    "Polish — B2",
-    "Ukrainian — C1",
-    "Russian — C1",
-    "German — A1",
+  "🇬🇧 English — C1",
+  "🇵🇱 Polish — B2",
+  "🇺🇦 Ukrainian — C1",
+  " Russian — C1",
+  "🇩🇪 German — A1",
   ],
 
-  focus: ["Frontend + Backend", "Type-safe codebases", "DX and performance", "Mobile first"],
+  focus: [
+    "🧑‍💻 Frontend + Backend",
+    "🧬 Type-safe codebases",
+    "🚀 DX and performance",
+    "📱 Mobile first",
+  ],
 
   availability: [
-    "Open to full-time/contract",
-    "Remote-first; Warsaw timezone",
-    "Freelance friendly",
+    "🧑‍💼 Open to full-time/contract",
+    "🌍 Remote-first; Warsaw timezone",
+    "🤝 Freelance friendly",
   ],
 
-  interests: ["Travelling", "Music", "Classical literature", "Sport"],
+  interests: [
+    "✈️ Travelling",
+    "🎸 Music",
+    "📚 Classical literature",
+    "🏃‍♂️ Sport",
+  ],
+
 };
 
 export default aboutMePageData;

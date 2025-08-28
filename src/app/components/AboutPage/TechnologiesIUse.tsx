@@ -9,9 +9,9 @@ interface Props {
 export default function TechnologiesIUse({technologies}: Props) {
 
   return (
-    <div>
+    <div className="mt-[7rem] w-[70%]">
       <AboutPageTitle title="Technologies I use" />
-      <ul>
+      <ul className="flex flex-col gap-[3rem]">
         {technologies.map((tech, i) => {
           return (
             <TechnologyElement key={i} {...tech}/> 

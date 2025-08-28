@@ -13,9 +13,9 @@ export default function AdditionalInfo({
   availability, interests}: Props) {
 
   return (
-    <div>
+    <div className="mt-[5rem]">
       <AboutPageTitle title="Additional info"/>
-      <div>
+      <div className="grid grid-cols-2 gap-[2rem]">
         <AdditionalInfoCard
           title="Languages"
           list={languages}

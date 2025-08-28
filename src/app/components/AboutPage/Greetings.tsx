@@ -14,7 +14,7 @@ export default function Greetings({description, resume}: Props) {
     <div className="mt-[5rem] flex items-center gap-[8rem]">
       <div className="flex flex-col gap-[2rem]">
         <AboutPageTitle title="Hi, I'm Oleksandr Lutsiuk"/>
-        <p className="text-[1.8rem] max-[66rem] text-neutral-300">
+        <p className="text-[1.8rem] max-[66rem] ">
           {description}
         </p>
         <button className="
