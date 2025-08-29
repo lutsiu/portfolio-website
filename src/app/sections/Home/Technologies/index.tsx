@@ -5,9 +5,11 @@ import SeeMore from "@/app/components/SeeMoreLink/SeeMoreLink";
 
 export default function TechnologiesSection() {
   return (
-    <section className="mt-[15rem]">
-      <Title title="Technologies I use" />
-      <ul className="mt-[5rem] flex flex-wrap items-center justify-center gap-10 md:justify-between">
+    <section className="mt-[8rem] lg:mt-[15rem]">
+      <div className="text-center md:text-left">
+        <Title title="Technologies I use" />
+      </div>
+      <ul className="mt-[3rem] md:mt-[5rem] flex flex-wrap items-center justify-center gap-10 md:justify-between">
         {technologies.map((t) => (
           <li key={t.id} className="group">
             <Icon
@@ -24,7 +26,7 @@ export default function TechnologiesSection() {
           </li>
         ))}
       </ul>
-      <div className="mx-auto w-fit mt-[8rem]">
+      <div className="mx-auto w-fit mt-[4rem] lg:mt-[8rem]">
         <SeeMore title="Check more" url="/about"/>
       </div>
     </section>
