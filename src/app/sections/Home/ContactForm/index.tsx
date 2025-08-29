@@ -8,6 +8,7 @@ export default function ContactForm() {
   return (
     <section 
       className="mt-[8rem] lg:mt-[15rem] relative "
+      id="contact"
     >
       <div className="flex flex-col md:flex-row gap-[7rem]">
         <Form/>

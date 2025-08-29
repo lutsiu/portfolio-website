@@ -18,7 +18,7 @@ export default function BottomPart() {
       <h4 className="font-bold text-[3rem]">Want something similar?</h4>
       <p className="text-[2rem] text-neutral-300">{"Let's talk about your idea or role."}</p>
       <Link
-         href={"/contact"} 
+         href={{ pathname: "/", hash: "contact" }}
          className="bg-indigo-500 hover:bg-purple-500 duration-300 text-white
                          text-3xl font-semibold flex justify-center items-center
                          rounded-[1rem] px-[2rem] py-[1.3rem] w-fit mt-[2rem] mx-auto md:mx-0">

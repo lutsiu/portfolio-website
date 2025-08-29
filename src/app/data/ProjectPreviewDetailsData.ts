@@ -10,7 +10,7 @@ const projectPreviewDetailsData: ProjectPreviewDetailsType[] = [
   },
   {
     title: "Lutsiu.co",
-    imageUrl: "/projects/lutsiuco/lutsiu-co-hero.png",
+    imageUrl: "/projects/lutsiuco/lutsiuco-hero.png",
     description: "Portfolio-style company website showcasing services.",
     link: "/projects/lutsiuco",
     technologies: ["React", "Framer Motion", "Tailwind"]
