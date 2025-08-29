@@ -14,6 +14,15 @@ interface Props {
 export default function Greetings({description, resume}: Props) {
   const {initial, animate} = useTransition();
 
+  function handleDownload() {
+    const link = document.createElement("a");
+    link.href = resume;
+    link.download = resume.split("/").pop() || "resume.pdf";
+    document.body.appendChild(link);
+    link.click();
+    link.remove();
+  }
+
   return (
     <motion.div 
       className="mt-[5rem] flex flex-col md:flex-row items-center gap-[5rem] md:gap-[8rem] text-center md:text-left"
@@ -27,7 +36,9 @@ export default function Greetings({description, resume}: Props) {
         <p className="text-[1.8rem] max-[66rem] ">
           {description}
         </p>
-        <button className="
+        <button 
+          onClick={handleDownload}
+          className="
           bg-purple-500 
           hover:bg-indigo-500 
           duration-300 py-[1.2rem] px-[1.7rem]

@@ -20,8 +20,10 @@ function useIsMdUp() {
       setIsMdUp("matches" in e ? e.matches : (e as MediaQueryList).matches);
 
     setIsMdUp(mq.matches);
+    // eslint-disable-next-line @typescript-eslint/no-unused-expressions, @typescript-eslint/no-explicit-any
     mq.addEventListener?.("change", onChange as (e: Event) => void) ?? mq.addListener(onChange as any);
     return () => {
+      // eslint-disable-next-line @typescript-eslint/no-unused-expressions, @typescript-eslint/no-explicit-any
       mq.removeEventListener?.("change", onChange as (e: Event) => void) ?? mq.removeListener(onChange as any);
     };
   }, []);
