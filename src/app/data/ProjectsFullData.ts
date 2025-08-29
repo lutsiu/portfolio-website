@@ -1,8 +1,16 @@
 import { ProjectFullDataType } from "../types/ProjectFullDataType";
 
-// Build: /projects/<slug>/<slug>-<n>.png
-function getScreens(slug: string, count = 9): string[] {
-  return Array.from({ length: count }, (_, i) => `/projects/${slug}/${slug}-${i + 1}.png`);
+// Helpers
+const ext = "png";
+const heroDesktop = (slug: string) => `/projects/${slug}/${slug}-hero.${ext}`;
+const heroMobile  = (slug: string) => `/projects/${slug}/${slug}-mobile-hero.${ext}`;
+
+function getScreensDesktop(slug: string, count = 9): string[] {
+  return Array.from({ length: count }, (_, i) => `/projects/${slug}/${slug}-${i + 1}.${ext}`);
+}
+
+function getScreensMobile(slug: string, count = 8): string[] {
+  return Array.from({ length: count }, (_, i) => `/projects/${slug}/${slug}-mobile-${i + 1}.${ext}`);
 }
 
 const projectsFullData: ProjectFullDataType[] = [
@@ -34,11 +42,13 @@ const projectsFullData: ProjectFullDataType[] = [
     myRole: `Full-stack. Discovery, IA, and wireframes → Next.js architecture → UI system in Tailwind → Embla carousels,
             i18n, and popups → form + Nodemailer backend → performance/SEO passes → deployment, domains, and monitoring.
             End-to-end delivery, including copy touch-ups and asset optimization.`,
-    heroImage: "/projects/intercode/intercode-hero.png",
-    screenshots: getScreens("intercode"),
+    heroImageDesktop: heroDesktop("intercode"),
+    heroImageMobile: heroMobile("intercode"),
+    screenshotsDekstop: getScreensDesktop("intercode"),
+    screenshotsMobile: getScreensMobile("intercode"),
   },
   {
-    id: "lutsiuco", // was "lutsiu-co"
+    id: "lutsiuco",
     title: "Lutsiu.co",
     subititle: "Portfolio-style company website",
     liveLink: "https://lutsiu-co.vercel.app",
@@ -61,8 +71,10 @@ const projectsFullData: ProjectFullDataType[] = [
     myRole: `Design + development end-to-end. Brand direction, layout, and copy; React architecture and routing;
             Tailwind component library; Framer Motion interactions; performance passes and accessibility checks; deploy
             and ongoing iteration.`,
-    heroImage: "/projects/lutsiuco/lutsiu-co-hero.png",
-    screenshots: getScreens("lutsiuco"),
+    heroImageDesktop: heroDesktop("lutsiuco"),
+    heroImageMobile: heroMobile("lutsiuco"),
+    screenshotsDekstop: getScreensDesktop("lutsiuco"),
+    screenshotsMobile: getScreensMobile("lutsiuco"),
   },
   {
     id: "deyan",
@@ -101,8 +113,10 @@ const projectsFullData: ProjectFullDataType[] = [
     myRole: `Full-stack. Requirements → IA → React UI with Tailwind/TS → i18n rollout → Express API (contact, Instagram)
             → Nodemailer pipeline → responsiveness and accessibility → deploy/monitoring. Handled copy touch-ups
             and image optimization as well.`,
-    heroImage: "/projects/deyan/deyan-hero.png",
-    screenshots: getScreens("deyan"),
+    heroImageDesktop: heroDesktop("deyan"),
+    heroImageMobile: heroMobile("deyan"),
+    screenshotsDekstop: getScreensDesktop("deyan"),
+    screenshotsMobile: getScreensMobile("deyan"),
   },
 ];
 

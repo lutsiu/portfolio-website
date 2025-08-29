@@ -11,6 +11,8 @@ export type ProjectFullDataType = {
   solution: string;
   impact: string;
   myRole: string;
-  heroImage: string;
-  screenshots: string[]
+  heroImageDesktop: string;
+  heroImageMobile: string;
+  screenshotsDekstop: string[];
+  screenshotsMobile: string[]
 };

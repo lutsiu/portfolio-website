@@ -1,5 +1,6 @@
 "use client";
 
+import { useEffect, useState } from "react";
 import BottomPart from "@/app/components/CaseStudyPage/BottomPart";
 import ProjectExplanation from "@/app/components/CaseStudyPage/ProjectExplanation";
 import ProjectScreenshots from "@/app/components/CaseStudyPage/ProjectScreenshots";
@@ -9,15 +10,31 @@ import TopPart from "@/app/components/CaseStudyPage/TopPart";
 import projectsFullData from "@/app/data/ProjectsFullData";
 import { ProjectFullDataType } from "@/app/types/ProjectFullDataType";
 import { usePathname } from "next/navigation";
-import { useState } from "react";
+
+// Tailwind md breakpoint = 768px
+function useIsMdUp() {
+  const [isMdUp, setIsMdUp] = useState(false);
+  useEffect(() => {
+    const mq = window.matchMedia("(min-width: 768px)");
+    const onChange = (e: MediaQueryListEvent | MediaQueryList) =>
+      setIsMdUp("matches" in e ? e.matches : (e as MediaQueryList).matches);
+
+    setIsMdUp(mq.matches);
+    mq.addEventListener?.("change", onChange as (e: Event) => void) ?? mq.addListener(onChange as any);
+    return () => {
+      mq.removeEventListener?.("change", onChange as (e: Event) => void) ?? mq.removeListener(onChange as any);
+    };
+  }, []);
+  return isMdUp;
+}
 
 export default function CaseStudyPage() {
   const pathname = usePathname();
   const projectName = pathname.split("/").at(2);
-
   const [activeImage, setActiveImage] = useState("");
 
-  const data = projectsFullData.find((pr) => pr.id === projectName) as ProjectFullDataType;
+  const data = projectsFullData.find((pr) => pr.id === projectName) as ProjectFullDataType | undefined;
+  const isMdUp = useIsMdUp();
 
   if (!data) {
     return <div className="p-8 text-center text-red-500">Project not found.</div>;
@@ -34,13 +51,18 @@ export default function CaseStudyPage() {
     solution,
     impact,
     myRole,
-    heroImage,
-    screenshots,
+    heroImageDesktop,
+    heroImageMobile,
+    screenshotsDekstop,
+    screenshotsMobile,
   } = data;
+
+  const heroSrc = isMdUp ? heroImageDesktop : heroImageMobile;
+  const shots = isMdUp ? screenshotsDekstop : screenshotsMobile;
 
   return (
     <>
-      <TopPart projectHeroImage={heroImage} projectTitle={title} />
+      <TopPart projectHeroImage={heroSrc} projectTitle={title} />
 
       <ProjectShortInfo
         projectTitle={title}
@@ -51,26 +73,14 @@ export default function CaseStudyPage() {
         technologies={technologies}
       />
 
-      <ProjectExplanation
-        context={context}
-        solution={solution}
-        impact={impact}
-        myRole={myRole}
-      />
+      <ProjectExplanation context={context} solution={solution} impact={impact} myRole={myRole} />
 
-      <ProjectScreenshots 
-        screenshots={screenshots}
-        setActiveImage={setActiveImage} 
-      />
+      <ProjectScreenshots screenshots={shots} setActiveImage={setActiveImage} />
 
       <BottomPart />
 
       {activeImage && (
-        <ScreensGallery 
-          images={data?.screenshots} 
-          activeImage={activeImage}
-          setActiveImage={setActiveImage}
-        />
+        <ScreensGallery images={shots} activeImage={activeImage} setActiveImage={setActiveImage} />
       )}
     </>
   );
