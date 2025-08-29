@@ -3,10 +3,10 @@ export default function HeroSection() {
   
   return (
     <section className="relative pt-[10rem]">
-      <div className="flex flex-col gap-[2rem]">
-        <h1 className="text-[6rem] leading-[100%]">Oleksandr Lutsiuk</h1>
+      <div className="flex flex-col gap-[4rem] md:gap-[2rem] items-center md:items-start ">
+        <h1 className="text-[6rem] leading-[100%] text-center md:text-left">Oleksandr Lutsiuk</h1>
         <h4 className="text-[2rem]">Full-Stack Developer</h4>
-        <p className="leading-[2.3rem] text-[1.7rem]">
+        <p className="leading-[2.3rem] text-[1.7rem] text-center md:text-left">
           I build fast, responsive, and user-friendly web applications using modern technologies like React, Next.js, Spring Boot and Node.js.
           <br />
           Passionate about turning ideas into real products that solve problems and create value.
@@ -18,7 +18,10 @@ export default function HeroSection() {
         </button>
       </div>
 
-      <div className="absolute top-[3rem] right-[15%] w-[50rem] h-[40rem] 
+      <div className="
+                hidden md:absolute top-[3rem] 
+                right-auto left-1/2 -translate-x-1/2
+                w-[50rem] h-[40rem] 
                 bg-gradient-to-br from-purple-600 to-indigo-700 
                 rounded-full blur-3xl opacity-40" />
     </section>

@@ -20,7 +20,7 @@ export default function ProjectPreviewCard({title, imageUrl, description, link, 
       onMouseEnter={() => setCardIsHovered(true)}
       onMouseLeave={() => setCardIsHovered(false)}
     >
-      <div className={`${cardIsHovered ? "pt-0 px-0": "pt-[2rem] px-[2rem]"} duration-300  h-[20rem]`}>
+      <div className={`${cardIsHovered ? "pt-0 px-0": "pt-[2rem] px-[2rem]"} duration-300 h-[30rem] md:h-[40rem] lg:h-[20rem]`}>
         <Image
           src={imageUrl}
           alt={title}
