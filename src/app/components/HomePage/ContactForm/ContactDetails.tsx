@@ -3,7 +3,7 @@ import ContactDetailsInfo from "./ContactDetailsInfo";
 export default function ContactDetails() {
 
   return (
-    <div className="flex-1 flex flex-col gap-[2rem] md:gap-0 justify-between text-center md:text-left">
+    <div className="flex-1 flex flex-col gap-[2rem] md:gap-0 justify-between text-center md:text-left z-10">
       <div>
         <h4 className="text-[2rem] text-purple-400 uppercase font-semibold">I love what I do</h4>
         <h2 className="font-bold text-[6rem] leading-[110%] md:leading-normal md:text-left mt-[2rem]">
@@ -16,7 +16,6 @@ export default function ContactDetails() {
       </div>
 
       <div className="flex flex-col gap-[2rem]">
-        <ContactDetailsInfo title="Phone" details="+48 501 247 687"/>
         <ContactDetailsInfo title="Email" details="oleksandrlutsiuk2004@gmail.com"/>
         <ContactDetailsInfo title="Availability" details="Mon-Fri, 9:00-17:00, Warsaw, PL"/>
       </div>

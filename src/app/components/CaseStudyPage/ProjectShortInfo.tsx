@@ -15,10 +15,10 @@ export default function ProjectShortInfo(
     repoLink, designLink, technologies}: Props) {
 
   return (
-    <div className="mt-[4rem]">
+    <div className="mt-[4rem] text-center md:text-left">
       <h1 className="font-bold text-[8rem] leading-[110%]">{projectTitle}</h1>
       <h4 className="text-3xl text-neutral-300">{projectSubtitle}</h4>
-      <ul className="flex flex-row gap-[1rem] my-[3rem]">
+      <ul className="flex flex-row justify-center md:justify-start gap-[1rem] my-[3rem]">
         <li>
           <Link 
             href={`${liveLink}`}
@@ -52,7 +52,7 @@ export default function ProjectShortInfo(
           </li>
         )}
       </ul>
-      <ul className="grid grid-cols-3 gap-[1.3rem] w-fit">
+      <ul className="grid grid-cols-3 mx-auto md:mx-0  gap-[1.3rem] w-fit">
         {technologies.map((d, i) => {
           return (
             <li

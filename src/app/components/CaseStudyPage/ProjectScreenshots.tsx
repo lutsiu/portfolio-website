@@ -12,8 +12,8 @@ export default function ProjectScreenshots({screenshots, setActiveImage}: Props)
 
   return (
     <div className="mt-[4rem]">
-      <h4 className="text-[4.5rem] font-bold">Screenshots</h4>
-      <div className="grid grid-cols-3 gap-[3rem] mt-[2rem]">
+      <h4 className="text-[4.5rem] font-bold text-center md:text-left">Screenshots</h4>
+      <div className="grid grid-cols-2 md:grid-cols-3 gap-[2rem] md:gap-[3rem] mt-[2rem]">
         {screenshots.map((img, i) => {
           return (
             <div 

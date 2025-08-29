@@ -19,8 +19,6 @@ export default function CaseStudyPage() {
 
   const data = projectsFullData.find((pr) => pr.id === projectName) as ProjectFullDataType;
 
-  
-
   if (!data) {
     return <div className="p-8 text-center text-red-500">Project not found.</div>;
   }
