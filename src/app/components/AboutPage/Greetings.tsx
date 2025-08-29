@@ -11,7 +11,7 @@ interface Props {
 export default function Greetings({description, resume}: Props) {
 
   return (
-    <div className="mt-[5rem] flex items-center gap-[8rem]">
+    <div className="mt-[5rem] flex flex-col md:flex-row items-center gap-[5rem] md:gap-[8rem] text-center md:text-left">
       <div className="flex flex-col gap-[2rem]">
         <AboutPageTitle title="Hi, I'm Oleksandr Lutsiuk"/>
         <p className="text-[1.8rem] max-[66rem] ">
@@ -22,7 +22,7 @@ export default function Greetings({description, resume}: Props) {
           hover:bg-indigo-500 
           duration-300 py-[1.2rem] px-[1.7rem]
           rounded-[0.5rem] text-[1.7rem] font-semibold w-fit
-          cursor-pointer
+          cursor-pointer mx-auto md:mx-0
         ">
           Download Resume
         </button>

@@ -14,8 +14,10 @@ export default function WhatIBring({
 
   return (
     <div className="mt-[7rem]">
-      <AboutPageTitle title="What I bring"/>
-      <div className="flex justify-between gap-[3rem] mt-[3rem]">
+      <div className="text-center md:text-left">
+        <AboutPageTitle title="What I bring"/>
+      </div>
+      <div className="grid grid-cols-1 md:grid-cols-3 justify-between gap-[3rem] mt-[3rem]">
         <WhatIBringCard 
           title="Product mindset"
           list={productMindsetList}  

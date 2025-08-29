@@ -6,7 +6,7 @@ import Image from "next/image";
 export default function TechnologyElement({name, image, skill, color}: AboutMePageTechnologyType) {
 
   return (
-    <li className="flex flex-col gap-[1rem]">
+    <li className="flex flex-col gap-[1rem] w-full">
       <div className="w-[10rem] h-[10rem] relative overflow-hidden">
         <Image 
           src={image}

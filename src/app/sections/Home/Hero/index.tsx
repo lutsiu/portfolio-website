@@ -19,7 +19,7 @@ export default function HeroSection() {
       </div>
 
       <div className="
-                hidden md:absolute top-[3rem] 
+                hidden md:block md:absolute top-[3rem] 
                 right-auto left-1/2 -translate-x-1/2
                 w-[50rem] h-[40rem] 
                 bg-gradient-to-br from-purple-600 to-indigo-700 
