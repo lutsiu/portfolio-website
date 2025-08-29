@@ -5,8 +5,10 @@ import Title from "../components/title";
 export default function Projects() {
   return (
     <div className="pt-[5rem]">
-      <Title title="Projects"/>
-      <div className="mt-[7rem] grid grid-cols-3 gap-[2rem]">
+      <div className="text-center md:text-left">
+        <Title title="Projects"/>
+      </div>
+      <div className="mt-[7rem] grid grid-cols-1 lg:grid-cols-3 gap-[2rem]">
         {projectPreviewDetailsData.map((pr, i) => {
           return (
             <ProjectPreviewCard key={i} {...pr}/>
