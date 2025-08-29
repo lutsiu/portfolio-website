@@ -7,7 +7,7 @@ import { Icon } from "@iconify/react/dist/iconify.js";
 export default function FooterNavigation() {
 
   return (
-    <nav className="flex items-center justify-between ">
+    <nav className="flex flex-col lg:flex-row gap-[3rem] lg:gap-0 items-center justify-between ">
       <h3>
         <Link 
           href={"/"}
