@@ -2,6 +2,7 @@
 import { motion } from "framer-motion";
 
 import useTransition from "@/app/hooks/useTransition";
+import Link from "next/link";
 
 export default function HeroSection() {
   const {initial, animate} = useTransition();
@@ -22,11 +23,11 @@ export default function HeroSection() {
           <br />
           Passionate about turning ideas into real products that solve problems and create value.
         </p>
-        <button className="
-          bg-purple-600 duration-300 hover:bg-indigo-600 
+        <Link href={"/projects"} className="
+          bg-purple-600 duration-300 hover:bg-indigo-600 block
           w-fit px-[3rem] py-[1.5rem] rounded-[0.75rem] cursor-pointer text-[1.7rem]">
           View Projects
-        </button>
+        </Link>
       </div>
 
       <div
