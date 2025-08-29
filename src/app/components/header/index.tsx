@@ -39,7 +39,7 @@ export default function Header() {
 
   return (
     <motion.header 
-      className="bg-black/70 text-white"
+      className="bg-black/70 text-white "
       initial={initial}
       whileInView={animate}
       viewport={{ once: true, amount: 0.35 }}   

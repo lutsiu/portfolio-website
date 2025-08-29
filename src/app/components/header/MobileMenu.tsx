@@ -2,6 +2,8 @@
 
 import Link from "next/link";
 import { Icon } from "@iconify/react/dist/iconify.js";
+import { createPortal } from "react-dom";
+import { useEffect, useState } from "react";
 
 type NavLink = { title: string; href: string };
 
@@ -16,25 +18,29 @@ export default function MobileMenu({
   brand: string;
   links: NavLink[];
 }) {
-  if (!open) return null;
+  const [mounted, setMounted] = useState(false);
+  useEffect(() => setMounted(true), []);
+  if (!open || !mounted) return null;
 
-  return (
+  const overlay = (
     <div
-      className="fixed inset-0 z-50 bg-neutral-900/90 backdrop-blur-sm py-[3rem] px-[3rem] sm:px-[6rem] md:px-[7rem]"
+      className="fixed inset-0 z-50 bg-neutral-900/90 backdrop-blur-sm
+                 py-[3rem] px-[3rem] sm:px-[6rem] md:px-[7rem]"
       role="dialog"
       aria-modal="true"
       onClick={onClose}
     >
-      <div className="pointer-events-none absolute top-8 right-[12%] w-[36rem] h-[28rem] bg-gradient-to-br from-purple-600 to-indigo-700 rounded-full blur-3xl opacity-30" />
+      {/* subtle glow */}
+      <div className="pointer-events-none absolute top-8 right-[12%] w-[36rem] h-[28rem]
+                      bg-gradient-to-br from-purple-600 to-indigo-700 rounded-full blur-3xl opacity-30" />
 
       <div
-        className="relative mx-auto flex h-full max-w-5xl flex-col
-                   "
+        className="relative mx-auto flex h-full max-w-5xl flex-col"
         onClick={(e) => e.stopPropagation()}
       >
         {/* Top bar */}
         <div className="flex w-full items-center justify-between">
-          <Link href="/" className="text-[2.4rem] font-medium" onClick={onClose}>
+          <Link href="/" className="text-[2.4rem] " onClick={onClose}>
             {brand}
           </Link>
           <button aria-label="Close menu" onClick={onClose} className="p-2">
@@ -59,4 +65,7 @@ export default function MobileMenu({
       </div>
     </div>
   );
+
+  // Render outside the transformed header
+  return createPortal(overlay, document.body);
 }
