@@ -1,5 +1,9 @@
+"use client";
+
 import AboutPageTitle from "./AboutPageTitle";
 import AdditionalInfoCard from "./AdditionalInfoCard";
+import useTransition from "@/app/hooks/useTransition";
+import { motion } from "framer-motion";
 
 interface Props {
   languages: string[]
@@ -12,8 +16,17 @@ export default function AdditionalInfo({
   languages, focus, 
   availability, interests}: Props) {
 
+  
+  const {initial, animate} = useTransition();
+
   return (
-    <div className="mt-[5rem]">
+    <motion.div 
+      className="mt-[5rem]"
+      initial={initial}
+      whileInView={animate}
+      viewport={{ once: true, amount: 0.35 }}   
+      transition={{ duration: 0.6, ease: "easeInOut" }}
+    >
       <AboutPageTitle title="Additional info"/>
       <div className="grid grid-cols-2 gap-[2rem]">
         <AdditionalInfoCard
@@ -33,6 +46,6 @@ export default function AdditionalInfo({
           list={interests}
         />
       </div>
-    </div>
+    </motion.div>
   )
 }

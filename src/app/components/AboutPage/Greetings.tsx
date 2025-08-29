@@ -1,7 +1,10 @@
+"use client";
+
 import Image from "next/image";
 import AboutPageTitle from "./AboutPageTitle";
 import me from "../../../../public/me.jpg";
-
+import useTransition from "@/app/hooks/useTransition";
+import { motion } from "framer-motion";
 
 interface Props {
   description: string;
@@ -9,9 +12,16 @@ interface Props {
 }
 
 export default function Greetings({description, resume}: Props) {
+  const {initial, animate} = useTransition();
 
   return (
-    <div className="mt-[5rem] flex flex-col md:flex-row items-center gap-[5rem] md:gap-[8rem] text-center md:text-left">
+    <motion.div 
+      className="mt-[5rem] flex flex-col md:flex-row items-center gap-[5rem] md:gap-[8rem] text-center md:text-left"
+      initial={initial}
+      whileInView={animate}
+      viewport={{ once: true, amount: 0.35 }}   
+      transition={{ duration: 0.6, ease: "easeInOut" }}
+    >
       <div className="flex flex-col gap-[2rem]">
         <AboutPageTitle title="Hi, I'm Oleksandr Lutsiuk"/>
         <p className="text-[1.8rem] max-[66rem] ">
@@ -39,6 +49,6 @@ export default function Greetings({description, resume}: Props) {
           />
         </div>
       </div>
-    </div>
+    </motion.div>
   )
 }

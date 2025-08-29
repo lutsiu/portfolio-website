@@ -2,6 +2,8 @@
 
 import { useState } from "react";
 import { toast } from "sonner";
+import useTransition from "@/app/hooks/useTransition";
+import { motion } from "framer-motion";
 
 type Values = { name: string; email: string; message: string; hp: string };
 
@@ -49,8 +51,17 @@ export default function Form() {
     }
   }
 
+  const {initial, animate} = useTransition();
+  
+
   return (
-    <form onSubmit={onSubmit} className="flex flex-col gap-[2rem] flex-1">
+    <motion.form 
+      onSubmit={onSubmit} className="flex flex-col gap-[2rem] flex-1"
+      initial={initial}
+      whileInView={animate}
+      viewport={{ once: true, amount: 0.35 }}   
+      transition={{ duration: 0.6, ease: "easeOut" }}
+    >
       <h5 className="font-light text-[3rem]">Send me a message</h5>
 
       {/* Honeypot (hidden from users) */}
@@ -123,6 +134,6 @@ export default function Form() {
       >
         {loading ? "Sending…" : "Send message"}
       </button>
-    </form>
+    </motion.form>
   );
 }

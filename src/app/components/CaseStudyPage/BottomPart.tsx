@@ -1,9 +1,20 @@
-import Link from "next/link";
+"use client";
 
+
+import Link from "next/link";
+import useTransition from "@/app/hooks/useTransition";
+import { motion } from "framer-motion";
 export default function BottomPart() {
+  const {initial, animate} = useTransition();
 
   return (
-    <div className="mt-[4rem] text-center md:text-left">
+    <motion.div 
+      className="mt-[4rem] text-center md:text-left"
+      initial={initial}
+      whileInView={animate}
+      viewport={{ once: true, amount: 0.35 }}   
+      transition={{ duration: 0.6, ease: "easeInOut" }}
+    >
       <h4 className="font-bold text-[3rem]">Want something similar?</h4>
       <p className="text-[2rem] text-neutral-300">{"Let's talk about your idea or role."}</p>
       <Link
@@ -13,6 +24,6 @@ export default function BottomPart() {
                          rounded-[1rem] px-[2rem] py-[1.3rem] w-fit mt-[2rem] mx-auto md:mx-0">
         Reach me out
       </Link>
-    </div>
+    </motion.div>
   )
 }

@@ -1,10 +1,14 @@
+"use client";
+
 import ContactDetails from "@/app/components/HomePage/ContactForm/ContactDetails";
 import Form from "@/app/components/HomePage/ContactForm/Form";
 
 export default function ContactForm() {
 
   return (
-    <section className="mt-[8rem] lg:mt-[15rem] relative ">
+    <section 
+      className="mt-[8rem] lg:mt-[15rem] relative "
+    >
       <div className="flex flex-col md:flex-row gap-[7rem]">
         <Form/>
         <ContactDetails/>

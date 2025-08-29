@@ -1,4 +1,8 @@
+"use client";
+
 import Link from "next/link";
+import useTransition from "@/app/hooks/useTransition";
+import { motion } from "framer-motion";
 
 interface Props {
   projectTitle: string;
@@ -7,15 +11,21 @@ interface Props {
   repoLink: string;
   designLink?: string;
   technologies: string[];
-  
 }
 
 export default function ProjectShortInfo(
     {projectSubtitle, projectTitle, liveLink, 
     repoLink, designLink, technologies}: Props) {
+  const {initial, animate} = useTransition();
 
   return (
-    <div className="mt-[4rem] text-center md:text-left">
+    <motion.div 
+      className="mt-[4rem] text-center md:text-left"
+      initial={initial}
+      whileInView={animate}
+      viewport={{ once: true, amount: 0.35 }}   
+      transition={{ duration: 0.6, ease: "easeInOut" }}
+    >
       <h1 className="font-bold text-[8rem] leading-[110%]">{projectTitle}</h1>
       <h4 className="text-3xl text-neutral-300">{projectSubtitle}</h4>
       <ul className="flex flex-row justify-center md:justify-start gap-[1rem] my-[3rem]">
@@ -67,6 +77,6 @@ export default function ProjectShortInfo(
           )
         })}
       </ul>
-    </div>
+    </motion.div>
   )
 }

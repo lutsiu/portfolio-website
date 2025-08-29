@@ -1,9 +1,20 @@
+"use client";
+
 import ContactDetailsInfo from "./ContactDetailsInfo";
+import useTransition from "@/app/hooks/useTransition";
+import { motion } from "framer-motion";
 
 export default function ContactDetails() {
+  const {initial, animate} = useTransition();
 
   return (
-    <div className="flex-1 flex flex-col gap-[2rem] md:gap-0 justify-between text-center md:text-left z-10">
+    <motion.div 
+      className="flex-1 flex flex-col gap-[2rem] md:gap-0 justify-between text-center md:text-left z-10"
+      initial={initial}
+      whileInView={animate}
+      viewport={{ once: true, amount: 0.35 }}   
+      transition={{ duration: 0.6, ease: "easeOut" }}
+    >
       <div>
         <h4 className="text-[2rem] text-purple-400 uppercase font-semibold">I love what I do</h4>
         <h2 className="font-bold text-[6rem] leading-[110%] md:leading-normal md:text-left mt-[2rem]">
@@ -23,6 +34,6 @@ export default function ContactDetails() {
       <p className="text-[1.4rem] text-zinc-300 font-light">
         Prefer chat? Telegram / LinkedIn / Instagram available on the footer.
       </p>
-    </div>
+    </motion.div>
   )
 }

@@ -6,6 +6,7 @@ import { usePathname } from "next/navigation";
 import { Icon } from "@iconify/react/dist/iconify.js";
 import navLinks from "../../data/NavigationLinksData";
 import MobileMenu from "./MobileMenu";
+import { motion, useReducedMotion } from "framer-motion";
 
 export default function Header() {
   const [open, setOpen] = useState(false);
@@ -26,8 +27,24 @@ export default function Header() {
     document.body.style.overflow = open ? "hidden" : "";
   }, [open]);
 
+  const reduce = useReducedMotion();
+
+  const initial = reduce
+    ? { opacity: 0 }
+    : { opacity: 0, y: -40, filter: "blur(6px)" };
+
+  const animate = reduce
+    ? { opacity: 1 }
+    : { opacity: 1, y: 0, filter: "blur(0px)" };
+
   return (
-    <header className="bg-black/70 text-white">
+    <motion.header 
+      className="bg-black/70 text-white"
+      initial={initial}
+      whileInView={animate}
+      viewport={{ once: true, amount: 0.35 }}   
+      transition={{ duration: 0.6, ease: "easeOut" }}
+    >
       <nav className="mx-auto flex items-center justify-between py-[3rem]">
         <h3>
           <Link href="/" className="text-[2.4rem] duration-300 hover:text-zinc-400">
@@ -64,6 +81,6 @@ export default function Header() {
         brand="Oleksandr Lutsiuk"
         links={navLinks}
       />
-    </header>
+    </motion.header>
   );
 }

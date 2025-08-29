@@ -1,6 +1,9 @@
+"use client";
+
 import AboutPageTitle from "./AboutPageTitle";
 import WhatIBringCard from "./WhatIBringCard";
-
+import useTransition from "@/app/hooks/useTransition";
+import { motion } from "framer-motion";
 interface Props {
   productMindsetList: string[];
   qualityAndSpeedList: string[];
@@ -11,9 +14,16 @@ export default function WhatIBring({
   productMindsetList, 
   qualityAndSpeedList, 
   communicationList}: Props) {
+  const {initial, animate} = useTransition();
 
   return (
-    <div className="mt-[7rem]">
+    <motion.div 
+      className="mt-[7rem]"
+      initial={initial}
+      whileInView={animate}
+      viewport={{ once: true, amount: 0.35 }}   
+      transition={{ duration: 0.6, ease: "easeInOut" }}
+    >
       <div className="text-center md:text-left">
         <AboutPageTitle title="What I bring"/>
       </div>
@@ -31,6 +41,6 @@ export default function WhatIBring({
           list={communicationList}  
         />
       </div>
-    </div>
+    </motion.div>
   )
 }

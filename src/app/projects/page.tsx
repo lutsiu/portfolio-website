@@ -1,10 +1,22 @@
+"use client";
+
 import ProjectPreviewCard from "@/app/components/HomePage/Projects/ProjectPreviewCard";
 import projectPreviewDetailsData from "@/app/data/ProjectPreviewDetailsData";
 import Title from "../components/title";
+import useTransition from "@/app/hooks/useTransition";
+import { motion } from "framer-motion";
 
 export default function Projects() {
+  const {initial, animate} = useTransition();
+  
   return (
-    <div className="pt-[5rem]">
+    <motion.div 
+      className="pt-[5rem]"
+      initial={initial}
+      whileInView={animate}
+      viewport={{ once: true, amount: 0.35 }}   
+      transition={{ duration: 0.6, ease: "easeInOut" }}
+    >
       <div className="text-center md:text-left">
         <Title title="Projects"/>
       </div>
@@ -15,6 +27,6 @@ export default function Projects() {
           )
         })}
       </div>
-    </div>
+    </motion.div>
   )
 }

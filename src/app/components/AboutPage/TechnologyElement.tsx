@@ -1,27 +1,31 @@
+"use client";
+
 import { AboutMePageTechnologyType } from "@/app/types/AboutMePageDataType";
 import Image from "next/image";
+import { motion, useReducedMotion } from "framer-motion";
 
-
-
-export default function TechnologyElement({name, image, skill, color}: AboutMePageTechnologyType) {
+export default function TechnologyElement({ name, image, skill, color }: AboutMePageTechnologyType) {
+  const reduce = useReducedMotion();
+  const target = `${skill}%`;
 
   return (
     <li className="flex flex-col gap-[1rem] w-full">
       <div className="w-[10rem] h-[10rem] relative overflow-hidden">
-        <Image 
-          src={image}
-          alt={name}
-          fill
-          className="object-content"
+        <Image src={image} alt={name} fill className="object-content" />
+      </div>
+
+      <h6 className="text-[2rem] font-medium">{name}</h6>
+
+      <div className="bg-neutral-600 rounded-[1rem] overflow-hidden">
+        <motion.div
+          className="h-[1rem] rounded-[1rem]"
+          style={{ backgroundColor: color }}
+          initial={{ width: 0 }}
+          whileInView={{ width: target }}
+          viewport={{ once: true, amount: 0.6 }}
+          transition={{ duration: reduce ? 0 : 0.8, ease: "easeOut" }}
         />
       </div>
-      <h6 className="text-[2rem] font-medium">{name}</h6>
-      <div className="bg-neutral-600 rounded-[1rem]">
-        <div 
-          className="h-[1rem] rounded-[1rem]"
-          style={{backgroundColor: color, width: `${skill}%`}}
-        ></div>
-      </div>
     </li>
-  )
+  );
 }

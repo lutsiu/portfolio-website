@@ -1,11 +1,24 @@
+"use client";
+
 import SeeMore from "@/app/components/SeeMoreLink/SeeMoreLink";
 import Title from "@/app/components/title";
 import me from "../../../../../public/me.jpg";
 import Image from "next/image";
+import { motion } from "framer-motion";
+import useTransition from "@/app/hooks/useTransition";
+
+
 export default function WhoAmISection() {
+  const {initial, animate} = useTransition();
   
   return (
-    <section className="mt-[8rem] lg:mt-[15rem] relative text-center md:text-left">
+    <motion.section 
+      className="mt-[8rem] lg:mt-[15rem] relative text-center md:text-left"
+      initial={initial}
+      whileInView={animate}
+      viewport={{ once: true, amount: 0.35 }}   
+      transition={{ duration: 0.6, ease: "easeOut" }}
+    >
       <div className="flex flex-col items-center md:flex-row gap-[5rem] md:gap-[6rem] lg:gap-[10rem]">
         <div className="flex flex-col gap-[2rem]">
           <Title title="Who Am I"/>
@@ -27,6 +40,6 @@ export default function WhoAmISection() {
         </div>
       </div>
       
-    </section>
+    </motion.section>
   )
 }

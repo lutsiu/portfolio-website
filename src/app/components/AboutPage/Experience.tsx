@@ -1,4 +1,8 @@
+"use client";
+
 import AboutPageTitle from "./AboutPageTitle";
+import useTransition from "@/app/hooks/useTransition";
+import { motion } from "framer-motion";
 
 interface Props {
   experienceCompany: string
@@ -11,8 +15,16 @@ export default function Experience({
     experienceTasksList, 
     experienceTechnologies}: Props) {
 
+  const {initial, animate} = useTransition();
+
   return (
-    <div className="mt-[5rem]">
+    <motion.div 
+      className="mt-[5rem]"
+      initial={initial}
+      whileInView={animate}
+      viewport={{ once: true, amount: 0.35 }}   
+      transition={{ duration: 0.6, ease: "easeInOut" }}
+    >
       <div className="text-center md:text-left">
         <AboutPageTitle title="Experience"/>
       </div>
@@ -38,6 +50,6 @@ export default function Experience({
           })}
         </ul>
       </div>
-    </div>
+    </motion.div>
   )
 }

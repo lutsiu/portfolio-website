@@ -2,6 +2,8 @@
 
 import Image from "next/image";
 import { Dispatch, SetStateAction } from "react";
+import useTransition from "@/app/hooks/useTransition";
+import { motion } from "framer-motion";
 
 interface Props {
   screenshots: string[];
@@ -9,9 +11,16 @@ interface Props {
 }
 
 export default function ProjectScreenshots({screenshots, setActiveImage}: Props) {
+  const {initial, animate} = useTransition();
 
   return (
-    <div className="mt-[4rem]">
+    <motion.div 
+      className="mt-[4rem]"
+      initial={initial}
+      whileInView={animate}
+      viewport={{ once: true, amount: 0.35 }}   
+      transition={{ duration: 0.6, ease: "easeInOut" }}
+    >
       <h4 className="text-[4.5rem] font-bold text-center md:text-left">Screenshots</h4>
       <div className="grid grid-cols-2 md:grid-cols-3 gap-[2rem] md:gap-[3rem] mt-[2rem]">
         {screenshots.map((img, i) => {
@@ -31,6 +40,6 @@ export default function ProjectScreenshots({screenshots, setActiveImage}: Props)
           )
         })}
       </div>
-    </div>
+    </motion.div>
   )
 }
