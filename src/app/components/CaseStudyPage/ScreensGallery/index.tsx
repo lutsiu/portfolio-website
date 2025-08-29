@@ -5,6 +5,7 @@ import useEmblaCarousel from "embla-carousel-react";
 import { Icon } from "@iconify/react/dist/iconify.js";
 import Carousel from "./Carousel";
 import Thumbs from "./Thumbs";
+import CarouselButton from "./CarouselButton";
 
 interface Props {
   images: string[];
@@ -63,13 +64,9 @@ export default function ScreensGallery({ images, activeImage, setActiveImage }: 
       />
 
       <div className="flex items-center justify-center gap-[3rem] w-full h-full">
-        <Icon
-          icon="material-symbols-light:chevron-left-rounded"
-          width="50"
-          height="50"
-          className="cursor-pointer duration-300 hover:text-neutral-300"
-          onClick={() => emblaApi?.scrollPrev()}
-        />
+        <div className="hidden sm:block">
+          <CarouselButton direction="left" onClick={() => emblaApi?.scrollPrev()}/>
+        </div>
 
         <div className="w-[80vw] h-[80vh] relative overflow-hidden rounded-[2rem]">
           <Carousel
@@ -79,13 +76,18 @@ export default function ScreensGallery({ images, activeImage, setActiveImage }: 
           />
         </div>
 
-        <Icon
-          icon="material-symbols-light:chevron-right-rounded"
-          width="50"
-          height="50"
-          className="cursor-pointer duration-300 hover:text-neutral-300"
-          onClick={() => emblaApi?.scrollNext()}
-        />
+        <div className="hidden sm:block">
+          <CarouselButton direction="right" onClick={() => emblaApi?.scrollNext()}/>
+        </div>
+      </div>
+
+      <div className="mx-auto w-fit sm:hidden flex">
+        <div className="">
+          <CarouselButton direction="left" onClick={() => emblaApi?.scrollPrev()}/>
+        </div>
+        <div className="">
+          <CarouselButton direction="right" onClick={() => emblaApi?.scrollNext()}/>
+        </div>
       </div>
 
       <Thumbs

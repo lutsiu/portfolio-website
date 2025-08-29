@@ -11,7 +11,7 @@ type ThumbsProps = {
 
 export default function Thumbs({ images, activeImage, setActiveImage }: ThumbsProps) {
   return (
-    <ul className="flex justify-center items-center gap-[2rem] mt-[5rem] mx-auto">
+    <ul className=" hidden sm:flex w-full flex-wrap justify-center items-center gap-[2rem] mt-[5rem] mx-auto px-[5rem]">
       {images.map((im, i) => {
         const isActive = im === activeImage;
         return (
