@@ -19,7 +19,7 @@ export default function TechnologiesIUse({technologies}: Props) {
       className="mt-[7rem] w-full"
       initial={initial}
       whileInView={animate}
-      viewport={{ once: true, amount: 0.35 }}   
+      viewport={{ once: true, amount: 0.1 }}   
       transition={{ duration: 0.6, ease: "easeInOut" }}
     >
       <div className="text-center md:text-left">

@@ -54,9 +54,10 @@ export const technologiesPageTechnologies: AboutMePageTechnologyType[] = [
 export const aboutMePageData: AboutMePageDataType = {
   shortDescription:
     "Student, traveler, guitarist — and a future-focused full-stack developer.",
-  greetingsDescription: `I’m Oleksandr Lutsiuk (Sasha), a full-stack developer and Vistula student who enjoys turning ideas into fast, reliable web products. I work across the stack with React/Next.js, TypeScript and Tailwind on the front, and Node.js/Express on the back—shipping clean, typed code, reusable components, and simple APIs that are easy to extend. Recently I spent six months at Intercode as a full-stack engineer, delivering a lead-generating site with advanced SEO, i18n, Embla carousels, a Nodemailer contact pipeline, and performance/a11y improvements. I’m pragmatic, product-minded, and care about measurable outcomes: clear UX, quick LCP, and maintainable architecture over clever tricks.
-
-Outside the editor I’m a traveler and guitarist, which keeps my curiosity high and my problem-solving flexible. I’m comfortable owning a feature from brief to production—planning, building, testing, and deploying—and I communicate clearly along the way. I’m open to roles and collaborations where I can build impactful web experiences and keep learning.`,
+    greetingsDescription: `I’m Oleksandr Lutsiuk (Sasha), a full-stack developer and Vistula student. 
+                          I build fast, reliable web apps with React/Next.js + TypeScript/Tailwind on the front and Node.js/Express on 
+                          the back. At Intercode I shipped a lead-gen site with advanced SEO, i18n, Embla carousels, and a Nodemailer pipeline. Pragmatic and product-minded, 
+                          I focus on clear UX, quick LCP, and maintainable typed code. Outside work I travel and play guitar.`,
   resume: "/resume.pdf",
 
   technologies: technologiesPageTechnologies,

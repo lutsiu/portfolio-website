@@ -24,7 +24,7 @@ export default function ProjectScreenshots({ screenshots, setActiveImage }: Prop
       className="mt-[4rem]"
       initial={initial}
       whileInView={animate}
-      viewport={{ once: true, amount: 0.35 }}
+      viewport={{ once: true, amount: 0.1 }}
       transition={{ duration: 0.6, ease: "easeInOut" }}
     >
       <h4 className="text-[4.5rem] font-bold text-center md:text-left">Screenshots</h4>

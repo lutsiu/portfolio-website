@@ -62,14 +62,14 @@ export default function ProjectShortInfo(
           </li>
         )}
       </ul>
-      <ul className="grid grid-cols-3 mx-auto md:mx-0  gap-[1.3rem] w-fit">
+      <ul className="grid grid-cols-2 sm:grid-cols-3 mx-auto md:mx-0  gap-[1.3rem] w-fit">
         {technologies.map((d, i) => {
           return (
             <li
               key={i}
               className="rounded-[1rem] border border-neutral-500 px-[1rem] 
                         py-[0.5rem] hover:scale-110 hover:bg-indigo-500 cursor-pointer duration-300
-                        text-[1.5rem] w-[12rem] text-center
+                        text-[1.5rem] sm:w-[12rem] text-center
                         "
             >
               {d}

@@ -1,4 +1,3 @@
-// src/app/components/ProjectPreviewCard.tsx
 "use client";
 
 import { ProjectPreviewDetailsType } from "@/app/types/ProjectPreviewDetailsType";
@@ -9,13 +8,17 @@ import ImageSkeleton from "@/app/components/ImageSkeleton";
 
 export default function ProjectPreviewCard({
   title,
-  imageUrl,
+  imageUrlDekstop, // desktop (≥ md)
+  imageUrlMobile,  // mobile (< md)
   description,
   link,
   technologies,
 }: ProjectPreviewDetailsType) {
   const [cardIsHovered, setCardIsHovered] = useState(false);
-  const [loaded, setLoaded] = useState(false);
+  const [loadedDesktop, setLoadedDesktop] = useState(false);
+  const [loadedMobile, setLoadedMobile] = useState(false);
+
+  const showSkeleton = !(loadedDesktop || loadedMobile);
 
   return (
     <Link
@@ -32,20 +35,39 @@ export default function ProjectPreviewCard({
       <div
         className={`${
           cardIsHovered ? "pt-0 px-0" : "pt-[2rem] px-[2rem]"
-        } duration-300 h-[30rem] md:h-[40rem] lg:h-[20rem]`}
+        } duration-300 h-[40rem] md:h-[40rem] lg:h-[20rem]`}
       >
         <div className="relative w-full h-full">
-          {!loaded && <div className="absolute inset-0"><ImageSkeleton /></div>}
+          {showSkeleton && (
+            <div className="absolute inset-0">
+              <ImageSkeleton />
+            </div>
+          )}
+
+          {/* Mobile image (< md) */}
           <Image
-            src={imageUrl}
+            src={imageUrlMobile}
             alt={title}
             fill
-            sizes="(max-width:768px) 100vw, 50vw"
-            className={`w-full h-full rounded-[0.5rem] object-cover transition-opacity duration-300 ${
-              loaded ? "opacity-100" : "opacity-0"
+            sizes="(max-width: 767px) 100vw"
+            className={`md:hidden w-full h-full rounded-[0.5rem] object-cover transition-opacity duration-300 ${
+              loadedMobile ? "opacity-100" : "opacity-0"
             }`}
-            onLoad={() => setLoaded(true)}
-            aria-hidden={!loaded}
+            onLoad={() => setLoadedMobile(true)}
+            aria-hidden={loadedMobile ? undefined : true}
+          />
+
+          {/* Desktop image (≥ md) */}
+          <Image
+            src={imageUrlDekstop}
+            alt={title}
+            fill
+            sizes="(min-width: 768px) 50vw"
+            className={`hidden md:block w-full h-full rounded-[0.5rem] object-cover transition-opacity duration-300 ${
+              loadedDesktop ? "opacity-100" : "opacity-0"
+            }`}
+            onLoad={() => setLoadedDesktop(true)}
+            aria-hidden={loadedDesktop ? undefined : true}
           />
         </div>
       </div>

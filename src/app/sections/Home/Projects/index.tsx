@@ -17,7 +17,7 @@ export default function ProjectsSection() {
       className="mt-[8rem] lg:mt-[15rem]"
       initial={initial}
       whileInView={animate}
-      viewport={{ once: true, amount: 0.35 }}   
+      viewport={{ once: true, amount: 0.15 }}   
       transition={{ duration: 0.6, ease: "easeOut" }}
     >
       <div className="text-center md:text-left">

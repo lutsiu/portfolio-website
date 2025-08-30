@@ -4,6 +4,7 @@
 import Link from "next/link";
 import useTransition from "@/app/hooks/useTransition";
 import { motion } from "framer-motion";
+import SeeMore from "../SeeMoreLink/SeeMoreLink";
 export default function BottomPart() {
   const {initial, animate} = useTransition();
 
@@ -24,6 +25,9 @@ export default function BottomPart() {
                          rounded-[1rem] px-[2rem] py-[1.3rem] w-fit mt-[2rem] mx-auto md:mx-0">
         Reach me out
       </Link>
+      <div className="mt-[3rem]">
+        <SeeMore title="Get back to other projects" url="projects" />
+      </div>
     </motion.div>
   )
 }
