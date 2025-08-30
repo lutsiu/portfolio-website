@@ -26,7 +26,7 @@ export default function ProjectShortInfo(
       viewport={{ once: true, amount: 0.2 }}   
       transition={{ duration: 0.6, ease: "easeInOut" }}
     >
-      <h1 className="font-bold text-[8rem] leading-[110%]">{projectTitle}</h1>
+      <h1 className="font-bold text-[5rem] md:text-[8rem] leading-[110%]">{projectTitle}</h1>
       <h4 className="text-3xl text-neutral-300">{projectSubtitle}</h4>
       <ul className="flex flex-row justify-center md:justify-start gap-[1rem] my-[3rem]">
         <li>
