@@ -23,7 +23,7 @@ export default function ProjectShortInfo(
       className="mt-[4rem] text-center md:text-left"
       initial={initial}
       whileInView={animate}
-      viewport={{ once: true, amount: 0.35 }}   
+      viewport={{ once: true, amount: 0.2 }}   
       transition={{ duration: 0.6, ease: "easeInOut" }}
     >
       <h1 className="font-bold text-[8rem] leading-[110%]">{projectTitle}</h1>

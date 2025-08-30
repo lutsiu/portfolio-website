@@ -59,7 +59,7 @@ export default function Form() {
       onSubmit={onSubmit} className="flex flex-col gap-[2rem] flex-1"
       initial={initial}
       whileInView={animate}
-      viewport={{ once: true, amount: 0.35 }}   
+      viewport={{ once: true, amount: 0.2 }}   
       transition={{ duration: 0.6, ease: "easeOut" }}
     >
       <h5 className="font-light text-[3rem]">Send me a message</h5>

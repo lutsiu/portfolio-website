@@ -12,7 +12,7 @@ export default function ContactDetails() {
       className="flex-1 flex flex-col gap-[2rem] md:gap-0 justify-between text-center md:text-left z-10"
       initial={initial}
       whileInView={animate}
-      viewport={{ once: true, amount: 0.35 }}   
+      viewport={{ once: true, amount: 0.2 }}   
       transition={{ duration: 0.6, ease: "easeOut" }}
     >
       <div>

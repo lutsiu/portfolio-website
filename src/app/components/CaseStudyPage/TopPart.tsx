@@ -18,7 +18,7 @@ export default function TopPart({projectHeroImage, projectTitle}: Props) {
       className="mt-[3rem]"
       initial={initial}
       whileInView={animate}
-      viewport={{ once: true, amount: 0.35 }}   
+      viewport={{ once: true, amount: 0.2 }}   
       transition={{ duration: 0.6, ease: "easeInOut" }}
     >
       <div className="mt-[2rem] text-center md:text-left">

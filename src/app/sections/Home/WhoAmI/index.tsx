@@ -16,7 +16,7 @@ export default function WhoAmISection() {
       className="mt-[8rem] lg:mt-[15rem] relative text-center md:text-left"
       initial={initial}
       whileInView={animate}
-      viewport={{ once: true, amount: 0.35 }}   
+      viewport={{ once: true, amount: 0.2 }}   
       transition={{ duration: 0.6, ease: "easeOut" }}
     >
       <div className="flex flex-col items-center md:flex-row gap-[5rem] md:gap-[6rem] lg:gap-[10rem]">

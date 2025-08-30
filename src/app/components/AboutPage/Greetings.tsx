@@ -28,7 +28,7 @@ export default function Greetings({description, resume}: Props) {
       className="mt-[5rem] flex flex-col md:flex-row items-center gap-[5rem] md:gap-[8rem] text-center md:text-left"
       initial={initial}
       whileInView={animate}
-      viewport={{ once: true, amount: 0.35 }}   
+      viewport={{ once: true, amount: 0.2 }}   
       transition={{ duration: 0.6, ease: "easeInOut" }}
     >
       <div className="flex flex-col gap-[2rem]">

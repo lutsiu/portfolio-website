@@ -13,7 +13,7 @@ export default function BottomPart() {
       className="mt-[4rem] text-center md:text-left"
       initial={initial}
       whileInView={animate}
-      viewport={{ once: true, amount: 0.35 }}   
+      viewport={{ once: true, amount: 0.2 }}   
       transition={{ duration: 0.6, ease: "easeInOut" }}
     >
       <h4 className="font-bold text-[3rem]">Want something similar?</h4>

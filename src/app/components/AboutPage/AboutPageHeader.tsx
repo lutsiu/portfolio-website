@@ -15,7 +15,7 @@ export default function AboutPageHeader({shortDescription}: Props) {
       className="mt-[5rem] text-center md:text-left"
       initial={initial}
       whileInView={animate}
-      viewport={{ once: true, amount: 0.35 }}   
+      viewport={{ once: true, amount: 0.2 }}   
       transition={{ duration: 0.6, ease: "easeOut" }}
     >
       <h1 className="text-[7rem] font-bold leading-[110%]">About me</h1>

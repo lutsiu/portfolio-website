@@ -14,7 +14,7 @@ export default function Projects() {
       className="pt-[5rem]"
       initial={initial}
       whileInView={animate}
-      viewport={{ once: true, amount: 0.35 }}   
+      viewport={{ once: true, amount: 0.2 }}   
       transition={{ duration: 0.6, ease: "easeInOut" }}
     >
       <div className="text-center md:text-left">

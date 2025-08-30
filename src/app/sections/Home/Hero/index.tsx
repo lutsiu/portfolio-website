@@ -12,7 +12,7 @@ export default function HeroSection() {
       className="relative pt-[10rem]"
       initial={initial}
       whileInView={animate}
-      viewport={{ once: true, amount: 0.35 }}   
+      viewport={{ once: true, amount: 0.2 }}   
       transition={{ duration: 0.6, ease: "easeOut" }}
     >
       <div className="flex flex-col gap-[4rem] md:gap-[2rem] items-center md:items-start ">
